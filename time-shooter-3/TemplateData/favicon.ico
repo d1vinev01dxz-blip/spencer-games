@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-<head><script async src="https://arc.io/widget.min.js#VTeH6AEZ"></script>
+<head>
     <meta charset="UTF-8">
     <title>Unblocked Games - Free online games for school</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -450,15 +450,7 @@
         <div class="row">
             <div class="col">
                 <div class="text-center py-2">Unblocked Games &#169; 2022<br><a href="/privacy-policy">Privacy Policy</a> &#183; <a href="/about-us">About Us</a> &#183; <a href="/contact">Contact</a></div>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-E7773QFW3W"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-E7773QFW3W');
-</script>            </div>
+            </div>
         </div>
     </div>
 </div>
