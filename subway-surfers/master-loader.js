@@ -1,6 +1,10 @@
 "use strict";
 window.PokiSDK = {
     commercialBreak: function() { return Promise.resolve(); },
+    customEvent: function() {},
+    destroyAd: function() { return Promise.resolve(); },
+    displayAd: function() { return Promise.resolve(); },
+    gameInteractive: function() {},
     gameLoadingFinished: function() {},
     gameLoadingProgress: function() {},
     gameLoadingStart: function() {},
@@ -8,8 +12,13 @@ window.PokiSDK = {
     gameplayStop: function() {},
     happyTime: function() {},
     init: function() { return Promise.resolve(); },
+    initPokiBridge: function() { return Promise.resolve(); },
     rewardedBreak: function() { return Promise.resolve(); },
-    setDebug: function() {}
+    roundEnd: function() {},
+    roundStart: function() {},
+    setDebug: function() {},
+    setPlayerAge: function() {},
+    togglePlayerAdvertisingConsent: function() {}
 };
 var scripts = document.getElementsByTagName("script"),
     scriptUrl = scripts[scripts.length - 1].src,
