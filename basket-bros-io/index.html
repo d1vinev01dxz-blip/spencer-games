@@ -12,6 +12,37 @@
 	
 	<link rel="shortcut icon" type="image/png" href="./favicon.png">
 	
+	<script>
+	// CrazyGames SDK no-op stub (games.crazygames.com integration disabled)
+	window.gCrazySDK = (function() {
+		var listeners = {};
+		var dispatch = function(evt) {
+			var fn = listeners[evt];
+			if (typeof fn === 'function') fn();
+		};
+		return {
+			init: function() {},
+			isAvailable: function() { return false; },
+			requestAd: function(cb) {
+				if (typeof cb === 'function') cb();
+				setTimeout(function() { dispatch('adFinished'); }, 0);
+				if (typeof Promise !== 'undefined') return Promise.resolve();
+				return { then: function(r) { if (typeof r === 'function') r(); }, catch: function() { return this; } };
+			},
+			requestResponsiveBanner: function() {},
+			requestBanner: function() {},
+			addEventListener: function(event, cb) {
+				if (typeof cb === 'function') listeners[event] = cb;
+			},
+			removeEventListener: function(event, cb) {
+				delete listeners[event];
+			},
+			inviteLink: function(data) { return 'https://example.com/'; },
+			gameplayStart: function() {},
+			gameplayStop: function() {}
+		};
+	})();
+	</script>
 	
 	<script type="text/javascript" src="./BasketBros.js?th=447"></script>
 	
@@ -205,47 +236,13 @@
         <div class="section">
             <div style="display: flex; flex-direction: row; flex-wrap: wrap; margin: 10px; padding: 2px; justify-content: center;">
                 <div class="partner">
-					<script>
-						function getPartner(y) {
-							var referrer = document.referrer;
-							if(referrer.includes('crazygames'))
-							{
-								return '<center><br><div style="transform:translate('+'-50'+'px,'+y+'px); width=70%; z-index: 101; text-align:right;><font style="font-weight:normal;font-family:Arial;color:#010101;font-size:20px;"><a href="https://crazygames.com" target="_blank">Crazy Games</a></font><br></div></center>';
-							}
-							else if (referrer.includes('iogames.space'))
-							{
-								return '<center><br><div style="transform:translate('+'-50'+'px,'+y+'px); width=70%; z-index: 101; text-align:right;><font style="font-weight:normal;font-family:Arial;color:#010101;font-size:20px;"><a href="https://iogames.space" target="_blank">IO Games</a></font><br></div></center>';
-							}
-							else if(referrer.includes('poki'))
-							{
-								return '<center><br><div style="transform:translate('+'-50'+'px,'+y+'px); width=70%; z-index: 101; text-align:right;><font style="font-weight:normal;font-family:Arial;color:#010101;font-size:20px;">Check out our friends at <a href="https://poki.com" target="_blank">Poki</a></font><br></div></center>';
-							}
-							else if(referrer.includes('silver'))
-							{
-								return '<center><br><div style="transform:translate('+'-50'+'px,'+y+'px); width=70%; z-index: 101; text-align:right;><font style="font-weight:normal;font-family:Arial;color:#010101;font-size:20px;"><a href="https://silvergames.com" target="_blank">Silver Games</a></font><br></div></center>';
-							}
-							else
-							{
-								return '<center><br><div style="transform:translate('+'-50'+'px,'+y+'px); width=70%; z-index: 101; text-align:right;><font style="font-weight:normal;font-family:Arial;color:#010101;font-size:20px;"><a href="https://crazygames.com" target="_blank">Crazy Games</a></font><br></div></center>';
-							}
-							return "";
-						}
-						document.write(getPartner(0));
-					</script>
-					
+                   &nbsp; Play BasketBros with friends!
 				</div> 
 				<br/>
 				<br/>
                 <div class="partner">
                    &nbsp; Would you like to be a partner too? Contact: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d8b1b6beb798bab4adbdafb1a2b9aabcf6bbb7b5">[email&#160;protected]</a>
-                </div> 
-
-				<!--                <div class="partner defaultshow hidecrazygames">
-                    <a href="https://iogames.space/" target="_blank">More IO Games</a>
-                </div> -->
-<!--                <div class="partner  defaultshow hidecrazygames">
-                    <a href="https://silvergames.com/" target="_blank">Silver Games</a>
-                </div> -->
+                </div>
             </div>
         </div>
         <div class="section">
